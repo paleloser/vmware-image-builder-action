@@ -10,4 +10,4 @@ jobs:
       - uses: actions/checkout@v3
         name: Checkout Repository
       - uses: ./
-        name: Verify and publish ${{ needs.get-chart.outputs.chart }}
+        name: Run GH Action on ${{ github.ref }}
