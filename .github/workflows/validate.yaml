@@ -1,12 +1,5 @@
 name: Run Action
-on: 
-  workflow_dispatch:
-    inputs:
-      branch:
-        description: 'Branch name'
-        required: true
-        default: 'main'
-        type: string
+on: workflow_dispatch
 env:
   CSP_API_TOKEN: ${{ secrets.CSP_API_TOKEN }}
 jobs:
@@ -16,5 +9,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         name: Checkout Repository
-      - uses: vmware-labs/vmware-image-builder-action@${{ inputs.branch }}
+      - uses: ./
         name: Verify and publish ${{ needs.get-chart.outputs.chart }}
