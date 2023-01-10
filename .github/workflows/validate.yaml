@@ -11,3 +11,6 @@ jobs:
         name: Checkout Repository
       - uses: ./
         name: Run GH Action on ${{ github.ref }}
+        env:
+          SHA_ARCHIVE: https://github.com/bitnami/charts/tarball/32282c823a92b2520e9ed8599822730c372f01be
+          VIB_ENV_TARGET_PLATFORM: 91d398a2-25c4-4cda-8732-75a3cfc179a1
